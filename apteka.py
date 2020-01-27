@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 import sqlite3
 from PIL import Image, ImageTk
+from datetime import datetime
  
 class Main(tk.Frame):
     def __init__(self, root):
@@ -16,7 +17,7 @@ class Main(tk.Frame):
         
         # Подпись, версия
         some_text = tk.Label(toolbar,
-                            text = '"Аптечка"\nПриложение для ведения учета мед.препаратов\nАвтор: Oleksandr Kostynskyi\nВерсия: 1.0',
+                            text = '"Аптечка"\nПриложение для ведения учета мед.препаратов\nАвтор: Oleksandr Kostynskyi\nВерсия: 1.1',
                             fg = 'grey',
                             bg = '#d7d8e0',
                             bd = 0
@@ -73,6 +74,10 @@ class Main(tk.Frame):
         self.tree.heading('time', text = 'Срок годности')
         self.tree.heading('total', text = 'Количество')
         self.tree.pack()
+
+        var_date = datetime.now().strftime("%a, %d %b %Y %H:%M:%S")
+        time_label = tk.Label(self, text = 'Дата: ' + var_date, font=('bold', 13))
+        time_label.pack(side = tk.BOTTOM)
 
     def records(self, name, time, total):
         self.db.insert_data(name, time, total)
@@ -181,7 +186,7 @@ if __name__ == '__main__':
     app = Main(root)
     app.pack()
     root.title('Аптечка')
-    root.iconphoto(True, ImageTk.PhotoImage(file="./icon/healthcare.png"))
+    root.iconphoto(True, ImageTk.PhotoImage(file=".//icon//healthcare.png"))
     root.geometry('650x450+300+150')
     root.resizable(False, False)
     root.mainloop()
