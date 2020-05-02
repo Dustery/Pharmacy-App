@@ -1,5 +1,5 @@
 # Pharmacy App | Аптечка
-ENG: This app is for adding and storing medicines.
+ENG: This app is for adding and storing medicines.  
 RU: Это приложение для учета (хранения) списка лекарств.
 ## Установка
 Ссылка на программу. Скачать, разархивировать и запустить apteka.exe:
