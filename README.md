@@ -1,4 +1,4 @@
-# PharmacyApp
+# Pharmacy App
 This app is for adding and storing medicines.
 
 При переходе на новую версию, перенести в папку с новой версией программы 
